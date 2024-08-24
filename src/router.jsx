@@ -12,6 +12,13 @@ import Mysidebar from './components/sidebar/mycreate';
 import ProfilePage from './components/sidebar/profile/profile';
 import Leads from './components/sidebar/leads/leads';
 import LeadsComponent from './components/sidebar/leads/leads';
+import TeachColumn from './components/sidebar/teacher/columnteach';
+import DetailCom from './components/sidebar/TecherDetail';
+import BasicTabs from './components/sidebar/TecherDetail/tab';
+import GroupCom from './components/sidebar/Grouppage/table';
+import GroupsDetail from './components/sidebar/Grouppage/detail.jsx/detail';
+import TeacherPagesController from './components/sidebar/TecherDetail/new tab';
+import StudentCom from './components/sidebar/Student/table';
 // import Request from './components/requestDemo/navreq';
 // import ReqPage from './components/homePage';
 
@@ -45,6 +52,11 @@ function Router () {
       <Route path='/changepassword' element={<ChangePasswordPage/>}/>
       <Route path='/profile' element={<ProfilePage/>}/>
       <Route path='/leads' element={<LeadsComponent/>}/>
+      <Route path='/teacher' element={<TeachColumn/>}/>
+      <Route path='/teacher/:id' element = {<TeacherPagesController/>}/>
+      <Route path='/groups' element={<GroupCom/>}/>
+      <Route path='/groups/:id' element = {<GroupsDetail/>}/>
+      <Route path='/student' element = {<StudentCom/>}/>
      </Routes>
      </div>
     </div>

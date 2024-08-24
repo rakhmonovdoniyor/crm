@@ -49,20 +49,27 @@ function Mysidebar  ()  {
                     </Pii>
                 </Termiz>
                 </Link>
-                <Termiz>
+
+                <Link to="/teacher">
+                
+                <Termiz >
                     <img src={img3} alt="termiz" />
                     <Pii>
                     Teachers
 
                     </Pii>
                 </Termiz>
+                </Link>
+                <Link to="/groups">
                 <Termiz>
-                    <img src={img4} alt="termiz" />
+                    <img src={img4} alt="groups" />
                     <Pii>
                     Groups
 
                     </Pii>
                 </Termiz>
+                </Link>
+                <Link to="/student"> 
                 <Termiz>
                     <img src={img5} alt="termiz" />
                     <Pii>
@@ -70,6 +77,7 @@ function Mysidebar  ()  {
 
                     </Pii>
                 </Termiz>
+                </Link>
                 <Termiz>
                     <img src={img6} alt="termiz" />
                     <Pii>

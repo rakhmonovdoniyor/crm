@@ -1,20 +1,34 @@
 import * as React from 'react';
 import Table from '@mui/joy/Table';
-import { LeadCol, Thtag } from './ldcolumn';
+import { LeadCol, Thtag } from '../../leads/leadcolumn/ldcolumn';
 import { Users } from '../../../../data/data';
-import profil from "../../../../assets/leads/image 17.png"
-import PositionedMenu from '../leadgridcolumn/menulist';
-import CustomizedMenus from './menulist';
+//  import CustomizedMenus from '../leads/leadcolumn/menulist';
+// import { InputContainer, InputStyledIcon, LeadsCon, SearchIcon } from '../../leads/style';
+
+// import { Link } from 'react-router-dom';
 
 
 
 
-
-export default function LeadColumn() {
-  const data = Users.maindata.slice(0,6);
+export default function Income() {
+  const data = Users.maindata.slice(0,8);
   const dataLength = data.length;
   console.log("data:", data.length);
   return (
+    <>
+        
+        {/* <InputTeachWrap> */}
+        {/* <InputContainer>
+          <SearchIcon src={search} alt="icon" />
+          <InputStyledIcon type="text" placeholder="Search student..." />
+        </InputContainer> */}
+            {/* <input type="text" placeholder='Search' /> */}
+           {/* <div> */}
+            {/* <AddTeachModal/> */}
+           {/* </div> */}
+
+        {/* </InputTeachWrap> */}
+        
     <LeadCol >
     <Table hoverRow  >
       <thead>
@@ -46,7 +60,7 @@ export default function LeadColumn() {
              fontStyle: 'normal',
              fontWeight: '600',
              lineHeight: '14px' /* 116.667% */
-           }}>From Where</th>
+           }}>Groups</th>
           <th  style={{  padding: '20px',
              color:' #A098D5',
              fontFamily: "Public Sans",
@@ -54,14 +68,20 @@ export default function LeadColumn() {
              fontStyle: 'normal',
              fontWeight: '600',
              lineHeight: '14px' /* 116.667% */
-           }}>Section</th>
+           }}>Percent</th>
          
-          <th style={{width:'5%'}}></th>
+          {/* <th style={{width:'5%'}}></th> */}
         </tr>
       </thead>
+
+
+
+
       <tbody >
         {data.map((value,key, index) => (
+        
           <tr   key= {key}>
+            
             
             <td style={{display: 'flex',
                alignItems: 'center',padding: '30px',
@@ -74,8 +94,9 @@ export default function LeadColumn() {
              lineHeight: '16px' /* 116.667% */
                 }} >
                   {index ++}
-                  <img src={profil} alt="" />
+                  {/* <img src={profil} alt="" /> */}
                   {value.car.name}</td>
+                 
 
             <td style={{padding: '20px',
                color:'  #6053B9',
@@ -87,28 +108,30 @@ export default function LeadColumn() {
             }}>{value.car.desc.callnumber}</td>
 
             <td  style={{
-                color:'  #2C2669',
+                color:' #6053B9',
              fontFamily: "Public Sans",
              fontSize: '14px',
              fontStyle: 'normal',
              fontWeight: '700',
              lineHeight: '16px' /* 116.667% */
-            }}>{value.car.location}</td>
+            }}>0</td>
 
             <td  style={{
-                color:'  #2C2669',
+                color:' #6053B9',
              fontFamily: "Public Sans",
              fontSize: '14px',
              fontStyle: 'normal',
              fontWeight: '700',
              lineHeight: '16px' /* 116.667% */
-            }}>{value.car.name}</td>
+            }}>40%</td>
 
-            <td><CustomizedMenus/></td>
+            {/* <td><CustomizedMenus/></td> */}
           </tr>
+          
         ))}
       </tbody>
     </Table>
     </LeadCol>
+    </>
   );
 }

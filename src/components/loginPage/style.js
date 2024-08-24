@@ -56,7 +56,7 @@ justify-content: center;
 gap: 20px;
 padding-top: 100px;
 `
-export const InputCon1=styled.div`
+export const InputCon1=styled.form`
 display: flex;
 flex-direction: column;
 justify-content: center;

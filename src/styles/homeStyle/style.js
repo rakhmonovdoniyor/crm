@@ -124,7 +124,7 @@ opacity: 1.95;
 background: url(<path-to-image>) lightgray 0px -616px / 112.817% 183.589% no-repeat;
 background-image: url(${rasm1});
 
-    background-color: #2c2669;
+    background-color: #2c2799;
     position: absolute;
     /* top: 50px; */
     background-size: cover;

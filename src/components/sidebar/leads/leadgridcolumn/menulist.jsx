@@ -15,7 +15,7 @@ export default function PositionedMenu() {
     <Dropdown>
       <MenuButton
         slots={{ root: IconButton }}
-        slotProps={{ root: { variant: 'outlined', color: 'neutral' } }}
+        slotProps={{ root: {  color: 'neutral' } }}
       >
         <MoreVert />
       </MenuButton>
