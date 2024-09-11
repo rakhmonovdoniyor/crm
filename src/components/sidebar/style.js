@@ -2,19 +2,7 @@ import { Style } from "@mui/icons-material";
 import styled from "styled-components";
 
 export const SidebarLeft = styled.div`
-/* display: flex;/ */
-/* width: 256px; */
-/* height: 100%; */
-/* position: relative; */
-/* padding: 24px;
-flex-direction: column; */
-/* align-items: flex-start; */
-/* gap: 24px;
-flex-shrink: 0;
-border-radius: 12px;
-border-right: 1px solid rgba(0, 0, 0, 0.10);
-background-color: #FFF;
-justify-content: space-between; */
+
 
 
 width: 256px;

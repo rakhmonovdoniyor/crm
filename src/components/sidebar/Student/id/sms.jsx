@@ -1,10 +1,10 @@
 import * as React from "react";
 import Table from "@mui/joy/Table";
-import { LeadCol, Thtag } from "../leads/leadcolumn/ldcolumn";
-import { Users } from "../../../data/data";
-import profil from "../../../assets/leads/image 17.png";
+import { LeadCol, Thtag } from "../../leads/leadcolumn/ldcolumn";
+import { Users } from "../../../../data/data";
+import profil from "../../../../assets/leads/image 17.png";
 // import PositionedMenu from '../leads/leadgridcolumn/menulist';
-import CustomizedMenus from "../leads/leadcolumn/menulist";
+import CustomizedMenus from "../../leads/leadcolumn/menulist";
 import {
   InputContainer,
   InputStyledIcon,
@@ -12,79 +12,40 @@ import {
   LeadsCon2,
   ResetButton,
   SearchIcon,
-} from "./style";
-import search from "../../../assets/leads/serach.png";
-import { GridCon } from "../leads/leadgridcolumn/gridstyle";
-import { InputTeachWrap } from "../teacher/style";
-import AddTeachModal from "../teacher/addteachmodal";
+} from "../../leads/style";
+
 import { Link } from "react-router-dom";
+import { GrouptableCon, GrouptableCon2 } from "./Stuentdetailstyle";
 // import search from "../../../assets/leads/serach.png"
-import strelka from "../../../assets/leads/strelka.png";
-import reset from "../../../assets/leads/reset.png";
-import AddleadModal from "../leads/addleadmod";
-import CreateGroup from "../Grouppage/addgroup";
-import AddStudent from "./addStudent";
+
 // import CreateGroup from './addgroup';
 
-export default function StudentCom() {
-  const data = Users.maindata.slice(0, 6);
+export default function SMS() {
+  const data = Users.maindata.slice(0, 2);
   const dataLength = data.length;
   console.log("data:", data.length);
   return (
-    <LeadsCon>
-      <LeadsCon2>
-        <InputContainer>
-          <SearchIcon src={search} alt="icon" />
-          <InputStyledIcon type="text" placeholder="Search student..." />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Finance Status" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-
-        <ResetButton $maxWidth>
-          <img src={reset} alt="icon" />
-          Reset filter
-        </ResetButton>
-        <div>
-          {" "}
-          <AddStudent />
-        </div>
-      </LeadsCon2>
-
-      {/* </InputTeachWrap> */}
-
-      <LeadCol>
+    <GrouptableCon>
+      <GrouptableCon2>
         <Table hoverRow>
           <thead>
             <tr>
               <th style={{ width: "0.5%" }}></th>
               <th
                 style={{
-                  width: "30%",
+                  width: "60%",
                   padding: "20px",
                   color: " #A098D5",
                   fontFamily: "Public Sans",
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                   paddingLeft: "80px",
                 }}
               >
                 {" "}
-                Full name
+                Date
               </th>
 
               <th
@@ -95,37 +56,10 @@ export default function StudentCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               >
-                {" "}
-                Phone number
-              </th>
-              <th
-                style={{
-                  padding: "20px",
-                  color: " #A098D5",
-                  fontFamily: "Public Sans",
-                  fontSize: "12px",
-                  fontStyle: "normal",
-                  fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
-                }}
-              >
-                Groups
-              </th>
-              <th
-                style={{
-                  padding: "20px",
-                  color: " #A098D5",
-                  fontFamily: "Public Sans",
-                  fontSize: "12px",
-                  fontStyle: "normal",
-                  fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
-                }}
-              >
-                Courses
+                Receiver
               </th>
               <th
                 style={{
@@ -136,7 +70,7 @@ export default function StudentCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               >
                 Teachers
@@ -146,7 +80,7 @@ export default function StudentCom() {
                 style={{
                   padding: "20px",
                   width: "8%",
-                  //  display: 'flex', justifyContent:'center',
+
                   textAlign: "center",
                   paddingRight: "20px",
                   color: " #A098D5",
@@ -154,11 +88,9 @@ export default function StudentCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               ></th>
-
-              {/* <th style={{width:'5%'}}></th> */}
             </tr>
           </thead>
 
@@ -181,27 +113,14 @@ export default function StudentCom() {
                       lineHeight: "16px" /* 116.667% */,
                     }}
                   >
-                    <img src={profil} alt="" />
-                    {value.car.name}
+                    {/* <img src={profil} alt="" /> */}
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry.
                   </td>
 
                   <td
                     style={{
-                      padding: "20px",
-                      color: "  #6053B9",
-                      fontFamily: "Public Sans",
-                      fontSize: "14px",
-                      fontStyle: "normal",
-                      fontWeight: "500",
-                      lineHeight: "16px" /* 116.667% */,
-                    }}
-                  >
-                    99 436 89 42
-                  </td>
-
-                  <td
-                    style={{
-                      color: " #6053B9",
+                      color: "var(--500, #6053B9)",
                       fontFamily: "Public Sans",
                       fontSize: "14px",
                       fontStyle: "normal",
@@ -219,24 +138,24 @@ export default function StudentCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
                     IT Bootcamp
                     <br />
                   </td>
-                  <td
+                  {/* <td
                     style={{
                       color: " #6053B9",
                       fontFamily: "Public Sans",
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
                     Shamsiddin 2
-                  </td>
+                  </td> */}
                   <td
                     style={{
                       color: " #6053B9",
@@ -245,25 +164,17 @@ export default function StudentCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
-                    <button
-                      style={{
-                        backgroundColor: "transparent",
-                        border: "none",
-                      }}
-                    >
-                      {" "}
-                      <CustomizedMenus />
-                    </button>
+                    <CustomizedMenus />
                   </td>
                 </tr>
               </Link>
             ))}
           </tbody>
         </Table>
-      </LeadCol>
-    </LeadsCon>
+      </GrouptableCon2>
+    </GrouptableCon>
   );
 }

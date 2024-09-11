@@ -1,9 +1,10 @@
 import * as React from "react";
 import Table from "@mui/joy/Table";
-import { LeadCol, Thtag } from "../leads/leadcolumn/ldcolumn";
-import { Users } from "../../../data/data";
-import profil from "../../../assets/leads/image 17.png";
-
+import { LeadCol, Thtag } from "../../leads/leadcolumn/ldcolumn";
+import { Users } from "../../../../data/data";
+import profil from "../../../../assets/leads/image 17.png";
+// import PositionedMenu from '../leads/leadgridcolumn/menulist';
+import CustomizedMenus from "../../leads/leadcolumn/menulist";
 import {
   InputContainer,
   InputStyledIcon,
@@ -11,50 +12,21 @@ import {
   LeadsCon2,
   ResetButton,
   SearchIcon,
-} from "../leads/style";
-import search from "../../../assets/leads/serach.png";
+} from "../../leads/style";
 
 import { Link } from "react-router-dom";
+import { GrouptableCon, GrouptableCon2 } from "./Stuentdetailstyle";
+// import search from "../../../assets/leads/serach.png"
 
-import strelka from "../../../assets/leads/strelka.png";
-import reset from "../../../assets/leads/reset.png";
+// import CreateGroup from './addgroup';
 
-import CreateGroup from "./addgroup";
-
-export default function GroupCom() {
-  const data = Users.maindata.slice(0, 6);
+export default function Grouptable() {
+  const data = Users.maindata.slice(0, 3);
   const dataLength = data.length;
   console.log("data:", data.length);
   return (
-    <LeadsCon>
-      <LeadsCon2>
-        <InputContainer>
-          <SearchIcon src={search} alt="icon" />
-          <InputStyledIcon type="text" placeholder="Search student..." />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-
-        <ResetButton $maxWidth>
-          <img src={reset} alt="icon" />
-          Reset filter
-        </ResetButton>
-        <div>
-          <CreateGroup />
-        </div>
-      </LeadsCon2>
-
-      {/* </InputTeachWrap> */}
-
-      <LeadCol>
+    <GrouptableCon>
+      <GrouptableCon2>
         <Table hoverRow>
           <thead>
             <tr>
@@ -68,12 +40,12 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                   paddingLeft: "80px",
                 }}
               >
                 {" "}
-                Group name
+                Date
               </th>
 
               <th
@@ -84,11 +56,11 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               >
                 {" "}
-                Course
+                Amount
               </th>
               <th
                 style={{
@@ -98,10 +70,10 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               >
-                Teacher
+                Groups
               </th>
               <th
                 style={{
@@ -111,12 +83,12 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               >
-                Days
+                Receiver
               </th>
-              <th
+              {/* <th
                 style={{
                   padding: "20px",
                   width: "12%",
@@ -125,17 +97,17 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
               >
-                Rooms
+                Teachers
               </th>
 
               <th
                 style={{
                   padding: "20px",
                   width: "8%",
-                  //  display: 'flex', justifyContent:'center',
+
                   textAlign: "center",
                   paddingRight: "20px",
                   color: " #A098D5",
@@ -143,13 +115,9 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px",
                 }}
-              >
-                Students
-              </th>
-
-              {/* <th style={{width:'5%'}}></th> */}
+              ></th> */}
             </tr>
           </thead>
 
@@ -172,7 +140,7 @@ export default function GroupCom() {
                       lineHeight: "16px" /* 116.667% */,
                     }}
                   >
-                    <img src={profil} alt="" />
+                    {/* <img src={profil} alt="" /> */}
                     {value.car.name}
                   </td>
 
@@ -187,79 +155,64 @@ export default function GroupCom() {
                       lineHeight: "16px" /* 116.667% */,
                     }}
                   >
+                    99 436 89 42
+                  </td>
+
+                  <td
+                    style={{
+                      color: " #6053B9",
+                      fontFamily: "Public Sans",
+                      fontSize: "14px",
+                      fontStyle: "normal",
+                      fontWeight: "700",
+                      lineHeight: "16px" /* 116.667% */,
+                    }}
+                  >
+                    New elementary
+                  </td>
+
+                  <td
+                    style={{
+                      color: " #6053B9",
+                      fontFamily: "Public Sans",
+                      fontSize: "14px",
+                      fontStyle: "normal",
+                      fontWeight: "700",
+                      lineHeight: "16px",
+                    }}
+                  >
                     IT Bootcamp
+                    <br />
                   </td>
-
-                  <td
+                  {/* <td
                     style={{
-                      color: " #2C2669",
+                      color: " #6053B9",
                       fontFamily: "Public Sans",
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
-                    U.Umida
-                  </td>
-
-                  <td
+                    Shamsiddin 2
+                  </td> */}
+                  {/* <td
                     style={{
-                      color: " #2C2669",
-                      fontFamily: "Public Sans",
-                      fontSize: "14px",
-                      fontStyle: "normal",
-                      fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
-                    }}
-                  >
-                    08:05 - 09:05 <br />
-                    <h5
-                      style={{
-                        color: " #A098D5",
-                        fontFamily: "Public Sans",
-                        fontSize: "10px",
-                        fontStyle: "normal",
-                        fontWeight: "400",
-                        lineHeight: "14px" /* 116.667% */,
-                      }}
-                    >
-                      Mon, Wed, Fri
-                    </h5>
-                  </td>
-                  <td
-                    style={{
-                      color: " #2C2669",
-                      fontFamily: "Public Sans",
-                      fontSize: "14px",
-                      fontStyle: "normal",
-                      fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
-                    }}
-                  >
-                    Room 2
-                  </td>
-                  <td
-                    style={{
-                      color: " #2C2669",
+                      color: " #6053B9",
                       fontFamily: "Public Sans",
                       paddingLeft: "20px",
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
-                  >
-                    24
-                  </td>
-
-                  {/* <td><CustomizedMenus/></td> */}
+                  ></td> */}
                 </tr>
               </Link>
             ))}
           </tbody>
         </Table>
-      </LeadCol>
-    </LeadsCon>
+      </GrouptableCon2>
+    </GrouptableCon>
   );
 }

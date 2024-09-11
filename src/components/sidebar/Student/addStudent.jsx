@@ -15,15 +15,15 @@ import {
 } from "../profile/modalst";
 import { Addlead } from "../leads/style";
 import { Checkbox } from "@mui/joy";
-import { CheckboxAddTeach, Scroll, Wrapp } from "./style";
-import Example from "../../requestDemo/numberInput";
+import { CheckboxAddTeach, Scroll, Wrapp } from "../teacher/style";
+// import Example from "../../requestDemo/numberInput";
 import App from "../../loginPage/hiddenpassword";
 // import Example from '../../requestDemo/numberInput';
 // import { Link } from 'react-router-dom';
 // import App from '../../loginPage/hiddenpassword';
 // import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 
-export default function AddTeachModal() {
+export default function AddStudent() {
   const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
@@ -79,49 +79,60 @@ export default function AddTeachModal() {
                 </InputPWrapp>
 
                 <InputPWrapp>
-                  <p>Telegram username</p>
-                  <InputName placeholder="Teelegram username " type="text" />
+                  <p>Date of birth</p>
+                  <InputName placeholder="Teelegram username " type="date" />
                 </InputPWrapp>
 
                 <InputPWrapp>
-                  <p>Upload photo</p>
-                  <InputName type="text" placeholder="Upload photo" />
+                  <p>Phone Number</p>
+                  <InputName type="number" placeholder="Phone Number" />
                   {/* <Example/> */}
                 </InputPWrapp>
+                <InputPWrapp>
+                  <p>Gender</p>
+                  <form style={{ display: "flex", gap: "20px" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "10px",
+                        alignItems: "center",
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        id="male"
+                        name="gender"
+                        value="male"
+                      />
 
-                <InputPWrapp>
-                  <p>Percent (%)</p>
-                  <InputName placeholder="Enter percent" type="text" />
-                </InputPWrapp>
-                <InputPWrapp>
-                  <p>Branches</p>
-                  <Wrapp>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                  </Wrapp>
+                      <label htmlFor="">Male</label>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        gap: "10px",
+                        alignItems: "center",
+                      }}
+                    >
+                      <input
+                        type="radio"
+                        id="female"
+                        name="gender"
+                        value="female"
+                      />
+                      <label htmlFor="">Female</label>
+                    </div>
+                  </form>
                 </InputPWrapp>
                 <InputPWrapp>
                   <p>Phone Number</p>
                   <InputName type="number" placeholder="+998 ..." />
                   {/* <Example/> */}
                 </InputPWrapp>
-                <div>
-                  <App />
-                </div>
+                <InputPWrapp>
+                  <p>Parent's Phone Number</p>
+                  <InputName type="password" placeholder="Enter Password" />
+                </InputPWrapp>
 
                 <div>
                   <SendButton>Create lead</SendButton>

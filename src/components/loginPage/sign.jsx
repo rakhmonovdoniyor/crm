@@ -27,7 +27,7 @@ const SignLogin = () => {
     event.preventDefault();
     // console.log("error");
     try {
-      const response = await axios.post("http://localhost:5053/crm/sign-in", {
+      const response = await axios.post("http://localhost:5053/sign-in", {
         email,
         password,
       });
@@ -38,7 +38,7 @@ const SignLogin = () => {
         console.log(" no succes");
       }
       console.log(response);
-      // navigate("/sidebar");
+      navigate("/profile");
 
       console.log("Login successful", response.data);
       // Handle successful login
@@ -83,7 +83,7 @@ const SignLogin = () => {
 
               <p>password</p>
               <InputName
-                placeholder="Enter email address"
+                placeholder="Password"
                 type="password"
                 name="password"
                 value={password}

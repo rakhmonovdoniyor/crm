@@ -241,7 +241,6 @@ export const TeacherInfoPages = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 16px; /* 114.286% */
-  cursor:pointer;
 
   &:hover {
     background-color: #2c2669;
@@ -270,3 +269,13 @@ export const WrapCenter = styled.div`
  justify-content: center;
 
 `;
+
+export const GroupContainer = styled.div`
+padding: 40px 0px;
+`
+export const ConGroup = styled.div`
+display: flex;
+flex-direction: column;
+/* align-items: center; */
+`
+ 

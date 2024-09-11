@@ -15,21 +15,22 @@ import {
 } from "../profile/modalst";
 import { Addlead } from "../leads/style";
 import { Checkbox } from "@mui/joy";
-import { CheckboxAddTeach, Scroll, Wrapp } from "./style";
-import Example from "../../requestDemo/numberInput";
+import { CheckboxAddTeach, Scroll, Wrapp } from "../teacher/style";
+// import Example from "../../requestDemo/numberInput";
 import App from "../../loginPage/hiddenpassword";
+import { CreateNewM } from "./styles";
 // import Example from '../../requestDemo/numberInput';
 // import { Link } from 'react-router-dom';
 // import App from '../../loginPage/hiddenpassword';
 // import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 
-export default function AddTeachModal() {
+export default function CategoryModal() {
   const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
-      <Addlead onClick={() => setOpen(true)}>
-        <p>+ Add Teacher</p>
-      </Addlead>
+      <CreateNewM onClick={() => setOpen(true)}>
+        <p> Create new category</p>
+      </CreateNewM>
 
       <Modal
         aria-labelledby="modal-title"
@@ -69,59 +70,14 @@ export default function AddTeachModal() {
                 lineHeight: "32px" /* 133.333% */,
               }}
             >
-              Add new Teacher
+              Create new category
             </Typography>
             <Typography id="modal-desc" textColor="text.tertiary">
               <Container2>
                 <InputPWrapp>
-                  <p>Full name</p>
+                  <p>Category name</p>
                   <InputName placeholder="Lead name" type="text" />
                 </InputPWrapp>
-
-                <InputPWrapp>
-                  <p>Telegram username</p>
-                  <InputName placeholder="Teelegram username " type="text" />
-                </InputPWrapp>
-
-                <InputPWrapp>
-                  <p>Upload photo</p>
-                  <InputName type="text" placeholder="Upload photo" />
-                  {/* <Example/> */}
-                </InputPWrapp>
-
-                <InputPWrapp>
-                  <p>Percent (%)</p>
-                  <InputName placeholder="Enter percent" type="text" />
-                </InputPWrapp>
-                <InputPWrapp>
-                  <p>Branches</p>
-                  <Wrapp>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                  </Wrapp>
-                </InputPWrapp>
-                <InputPWrapp>
-                  <p>Phone Number</p>
-                  <InputName type="number" placeholder="+998 ..." />
-                  {/* <Example/> */}
-                </InputPWrapp>
-                <div>
-                  <App />
-                </div>
 
                 <div>
                   <SendButton>Create lead</SendButton>

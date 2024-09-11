@@ -8,25 +8,30 @@ import {
   LineBottom,
   LineBottom4,
   LineBottom5,
-} from "./groupstyle";
-import profile from "../../../assets/sidebar/Avatar (1).png";
-import { Users } from "../../../data/data";
-import { Bottomdiv } from "./style";
-import { LogButton } from "../../../styles/homeStyle/style";
+} from "../../TecherDetail/groupstyle";
+import profile from "../../../../assets/leads/image 17.png";
+import { Users } from "../../../../data/data";
+import { Bottomdiv } from "../../TecherDetail/style";
+import { LogButton } from "../../../../styles/homeStyle/style";
+import CustomizedMenus from "../../leads/leadcolumn/menulist";
 
-const Group = () => {
-  const data = Users.maindata.slice(0, 6);
+import { ConGroup } from "./style";
+import StudentFourTabs from "./fourtable";
+
+const StudentGroup = () => {
+  const data = Users.maindata.slice(0, 1);
   const dataLength = data.length;
   console.log("data:", data.length);
 
   return (
-    <GroupWrap>
+    <ConGroup style={{ margin: "100px 300px", flexDirection: "column" }}>
       {data.map((value, key, index) => {
         return (
           <>
             <BoxWrap>
               <AvatarCon>
                 <img src={profile} alt="" />
+                <CustomizedMenus />
               </AvatarCon>
               <FourWrap>
                 <Bottomdiv>
@@ -42,7 +47,7 @@ const Group = () => {
                       lineHeight: "24px",
                     }}
                   >
-                    {value.car.name}
+                    Ocean
                   </h1>{" "}
                   <p>Group name</p>
                 </Bottomdiv>
@@ -50,7 +55,7 @@ const Group = () => {
                 <Bottomdiv>
                   <h1
                     style={{
-                      color: "#6053B9",
+                      color: "#2C2669",
 
                       /* Medium/18px -> 24px */
                       fontFamily: "Public Sans",
@@ -60,10 +65,28 @@ const Group = () => {
                       lineHeight: "32px",
                     }}
                   >
-                    {value.car.name}
+                    IT- Bootcamp
                   </h1>{" "}
                   <p>Course</p>
                 </Bottomdiv>
+                <Bottomdiv>
+                  <h1
+                    style={{
+                      color: "#6053B9",
+
+                      /* Medium/18px -> 24px */
+                      fontFamily: "Public Sans",
+                      fontSize: "18px",
+                      fontStyle: "normal",
+                      fontWeight: "500",
+                      lineHeight: "24px",
+                    }}
+                  >
+                    Shoxsanam
+                  </h1>{" "}
+                  <p>Teacher name</p>
+                </Bottomdiv>
+
                 <Bottomdiv>
                   <h1
                     style={{
@@ -77,9 +100,9 @@ const Group = () => {
                       lineHeight: "24px",
                     }}
                   >
-                    {value.car.date}
+                    03.24.2024 - 07.29.2024
                   </h1>{" "}
-                  <p>Start date</p>
+                  <p>Training dates</p>
                 </Bottomdiv>
                 <Bottomdiv>
                   <div style={{ display: "flex", gap: "10px" }}>
@@ -97,15 +120,16 @@ const Group = () => {
                 </LineBottom5>
 
                 <div>
-                  <LogButton>See group</LogButton>
+                  <LogButton>223.000 UZS</LogButton>
                 </div>
               </LineBottom4>
             </BoxWrap>
+            <StudentFourTabs />
           </>
         );
       })}
-    </GroupWrap>
+    </ConGroup>
   );
 };
 
-export default Group;
+export default StudentGroup;

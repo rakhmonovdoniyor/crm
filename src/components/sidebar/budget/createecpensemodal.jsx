@@ -15,20 +15,21 @@ import {
 } from "../profile/modalst";
 import { Addlead } from "../leads/style";
 import { Checkbox } from "@mui/joy";
-import { CheckboxAddTeach, Scroll, Wrapp } from "./style";
-import Example from "../../requestDemo/numberInput";
+import { CheckboxAddTeach, Scroll, Wrapp } from "../teacher/style";
+// import Example from "../../requestDemo/numberInput";
 import App from "../../loginPage/hiddenpassword";
+import PaymentMethodSelector from "./tabledetail/radio";
 // import Example from '../../requestDemo/numberInput';
 // import { Link } from 'react-router-dom';
 // import App from '../../loginPage/hiddenpassword';
 // import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 
-export default function AddTeachModal() {
+export default function CreateExpense() {
   const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
       <Addlead onClick={() => setOpen(true)}>
-        <p>+ Add Teacher</p>
+        <p>+ CreateExpense</p>
       </Addlead>
 
       <Modal
@@ -69,62 +70,42 @@ export default function AddTeachModal() {
                 lineHeight: "32px" /* 133.333% */,
               }}
             >
-              Add new Teacher
+              Create new expense
             </Typography>
             <Typography id="modal-desc" textColor="text.tertiary">
               <Container2>
                 <InputPWrapp>
-                  <p>Full name</p>
-                  <InputName placeholder="Lead name" type="text" />
+                  <p>Description</p>
+                  <InputName placeholder="Emter a text" type="text" />
                 </InputPWrapp>
 
                 <InputPWrapp>
-                  <p>Telegram username</p>
-                  <InputName placeholder="Teelegram username " type="text" />
+                  <p>Date </p>
+                  <InputName placeholder="Teelegram username " type="date" />
                 </InputPWrapp>
 
                 <InputPWrapp>
-                  <p>Upload photo</p>
-                  <InputName type="text" placeholder="Upload photo" />
+                  <p>Select Category</p>
+                  <InputName type="number" placeholder="Phone Number" />
                   {/* <Example/> */}
                 </InputPWrapp>
 
                 <InputPWrapp>
-                  <p>Percent (%)</p>
-                  <InputName placeholder="Enter percent" type="text" />
-                </InputPWrapp>
-                <InputPWrapp>
-                  <p>Branches</p>
-                  <Wrapp>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                    <CheckboxAddTeach>
-                      <Checkbox />
-                      <h4>Seul</h4>
-                    </CheckboxAddTeach>
-                  </Wrapp>
-                </InputPWrapp>
-                <InputPWrapp>
-                  <p>Phone Number</p>
-                  <InputName type="number" placeholder="+998 ..." />
+                  <p>Select employe</p>
+                  <InputName type="select" placeholder="Select" />
                   {/* <Example/> */}
                 </InputPWrapp>
-                <div>
-                  <App />
-                </div>
+                <InputPWrapp>
+                  <p>Amount</p>
+                  <InputName type="number" placeholder="Enteramount" />
+                </InputPWrapp>
+                <InputPWrapp>
+                  <p>Gender</p>
+                  <PaymentMethodSelector />
+                </InputPWrapp>
 
                 <div>
-                  <SendButton>Create lead</SendButton>
+                  <SendButton>Create new expense</SendButton>
                 </div>
               </Container2>
               {/* <Line>

@@ -1,9 +1,10 @@
 import * as React from "react";
 import Table from "@mui/joy/Table";
-import { LeadCol, Thtag } from "../leads/leadcolumn/ldcolumn";
-import { Users } from "../../../data/data";
-import profil from "../../../assets/leads/image 17.png";
-
+import { EditDelete, EditDeleteBtn, LeadCol, Thtag } from "../styles";
+import { Users } from "../../../../data/data";
+import profil from "../../../../assets/leads/image 17.png";
+import CreateOutlinedIcon from "@mui/icons-material/CreateOutlined";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import {
   InputContainer,
   InputStyledIcon,
@@ -11,54 +12,21 @@ import {
   LeadsCon2,
   ResetButton,
   SearchIcon,
-} from "../leads/style";
-import search from "../../../assets/leads/serach.png";
+} from "../styles";
 
 import { Link } from "react-router-dom";
 
-import strelka from "../../../assets/leads/strelka.png";
-import reset from "../../../assets/leads/reset.png";
-
-import CreateGroup from "./addgroup";
-
-export default function GroupCom() {
-  const data = Users.maindata.slice(0, 6);
+export default function CategoryTable() {
+  const data = Users.maindata.slice(0, 2);
   const dataLength = data.length;
   console.log("data:", data.length);
   return (
-    <LeadsCon>
-      <LeadsCon2>
-        <InputContainer>
-          <SearchIcon src={search} alt="icon" />
-          <InputStyledIcon type="text" placeholder="Search student..." />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-
-        <ResetButton $maxWidth>
-          <img src={reset} alt="icon" />
-          Reset filter
-        </ResetButton>
-        <div>
-          <CreateGroup />
-        </div>
-      </LeadsCon2>
-
-      {/* </InputTeachWrap> */}
-
+    <div>
       <LeadCol>
         <Table hoverRow>
           <thead>
             <tr>
-              <th style={{ width: "0.5%" }}></th>
+              <th style={{ width: "5%" }}></th>
               <th
                 style={{
                   width: "30%",
@@ -73,10 +41,10 @@ export default function GroupCom() {
                 }}
               >
                 {" "}
-                Group name
+                Category
               </th>
 
-              <th
+              {/* <th
                 style={{
                   padding: "20px",
                   color: " #A098D5",
@@ -84,7 +52,7 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px"  
                 }}
               >
                 {" "}
@@ -98,7 +66,7 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px"  
                 }}
               >
                 Teacher
@@ -111,7 +79,7 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px"  
                 }}
               >
                 Days
@@ -125,16 +93,16 @@ export default function GroupCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px"  
                 }}
               >
                 Rooms
-              </th>
+              </th> */}
 
               <th
                 style={{
                   padding: "20px",
-                  width: "8%",
+                  width: "10%",
                   //  display: 'flex', justifyContent:'center',
                   textAlign: "center",
                   paddingRight: "20px",
@@ -145,9 +113,7 @@ export default function GroupCom() {
                   fontWeight: "600",
                   lineHeight: "14px" /* 116.667% */,
                 }}
-              >
-                Students
-              </th>
+              ></th>
 
               {/* <th style={{width:'5%'}}></th> */}
             </tr>
@@ -155,28 +121,26 @@ export default function GroupCom() {
 
           <tbody>
             {data.map((value, index, key) => (
-              <Link to={`${value.id}`} style={{ display: "contents" }}>
-                <tr key={key}>
-                  <td> {index + 1}</td>
-                  <td
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      padding: "30px",
-                      gap: "10px",
-                      color: "  #2C2669",
-                      fontFamily: "Public Sans",
-                      fontSize: "14px",
-                      fontStyle: "normal",
-                      fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
-                    }}
-                  >
-                    <img src={profil} alt="" />
-                    {value.car.name}
-                  </td>
+              <tr key={key}>
+                <td> {index + 1}</td>
+                <td
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "30px",
+                    gap: "10px",
+                    color: "  #2C2669",
+                    fontFamily: "Public Sans",
+                    fontSize: "14px",
+                    fontStyle: "normal",
+                    fontWeight: "700",
+                    lineHeight: "16px" /* 116.667% */,
+                  }}
+                >
+                  Office ishlari uchun
+                </td>
 
-                  <td
+                {/* <td
                     style={{
                       padding: "20px",
                       color: "  #6053B9",
@@ -184,7 +148,7 @@ export default function GroupCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "500",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
                     IT Bootcamp
@@ -197,7 +161,7 @@ export default function GroupCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
                     U.Umida
@@ -210,7 +174,7 @@ export default function GroupCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
                     08:05 - 09:05 <br />
@@ -221,7 +185,7 @@ export default function GroupCom() {
                         fontSize: "10px",
                         fontStyle: "normal",
                         fontWeight: "400",
-                        lineHeight: "14px" /* 116.667% */,
+                        lineHeight: "14px",
                       }}
                     >
                       Mon, Wed, Fri
@@ -234,32 +198,36 @@ export default function GroupCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px",
                     }}
                   >
                     Room 2
-                  </td>
-                  <td
-                    style={{
-                      color: " #2C2669",
-                      fontFamily: "Public Sans",
-                      paddingLeft: "20px",
-                      fontSize: "14px",
-                      fontStyle: "normal",
-                      fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
-                    }}
-                  >
-                    24
-                  </td>
-
-                  {/* <td><CustomizedMenus/></td> */}
-                </tr>
-              </Link>
+                  </td> */}
+                <td
+                  style={{
+                    color: " #2C2669",
+                    fontFamily: "Public Sans",
+                    paddingLeft: "20px",
+                    fontSize: "14px",
+                    fontStyle: "normal",
+                    fontWeight: "700",
+                    lineHeight: "16px",
+                  }}
+                >
+                  <EditDeleteBtn>
+                    <EditDelete $edit>
+                      <CreateOutlinedIcon />
+                    </EditDelete>
+                    <EditDelete>
+                      <DeleteForeverOutlinedIcon />
+                    </EditDelete>
+                  </EditDeleteBtn>
+                </td>
+              </tr>
             ))}
           </tbody>
         </Table>
       </LeadCol>
-    </LeadsCon>
+    </div>
   );
 }

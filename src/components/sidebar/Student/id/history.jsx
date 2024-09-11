@@ -11,7 +11,7 @@ import {
   Line,
   Table1,
   ThAll,
-} from "./style";
+} from "./style copy";
 import { Users } from "../../../../data/data";
 
 function createData(name, calories, fat, carbs, protein) {
@@ -30,7 +30,7 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function History() {
+export default function HistoryS() {
   return (
     <Table
       sx={{

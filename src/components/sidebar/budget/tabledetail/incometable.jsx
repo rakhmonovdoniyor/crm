@@ -1,8 +1,8 @@
 import * as React from "react";
 import Table from "@mui/joy/Table";
-import { LeadCol, Thtag } from "../leads/leadcolumn/ldcolumn";
-import { Users } from "../../../data/data";
-import profil from "../../../assets/leads/image 17.png";
+import { LeadCol, Thtag } from "../styles";
+import { Users } from "../../../../data/data";
+import profil from "../../../../assets/leads/image 17.png";
 
 import {
   InputContainer,
@@ -11,49 +11,16 @@ import {
   LeadsCon2,
   ResetButton,
   SearchIcon,
-} from "../leads/style";
-import search from "../../../assets/leads/serach.png";
+} from "../styles";
 
 import { Link } from "react-router-dom";
 
-import strelka from "../../../assets/leads/strelka.png";
-import reset from "../../../assets/leads/reset.png";
-
-import CreateGroup from "./addgroup";
-
-export default function GroupCom() {
-  const data = Users.maindata.slice(0, 6);
+export default function IncomeTable() {
+  const data = Users.maindata.slice(0, 4);
   const dataLength = data.length;
   console.log("data:", data.length);
   return (
-    <LeadsCon>
-      <LeadsCon2>
-        <InputContainer>
-          <SearchIcon src={search} alt="icon" />
-          <InputStyledIcon type="text" placeholder="Search student..." />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-        <InputContainer>
-          {/* <SearchIcon src={search} alt="icon" /> */}
-          <InputStyledIcon type="text" placeholder="Search lead section" />
-          <SearchIcon src={strelka} alt="icon" />
-        </InputContainer>
-
-        <ResetButton $maxWidth>
-          <img src={reset} alt="icon" />
-          Reset filter
-        </ResetButton>
-        <div>
-          <CreateGroup />
-        </div>
-      </LeadsCon2>
-
-      {/* </InputTeachWrap> */}
-
+    <div>
       <LeadCol>
         <Table hoverRow>
           <thead>
@@ -260,6 +227,6 @@ export default function GroupCom() {
           </tbody>
         </Table>
       </LeadCol>
-    </LeadsCon>
+    </div>
   );
 }
