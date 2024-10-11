@@ -22,6 +22,9 @@ import StudentCom from "./components/sidebar/Student/table";
 import StudentDetail from "./components/sidebar/Student/id/id1";
 import BudjetComponent from "./components/sidebar/budget/budget";
 import NotificationCom from "./components/sidebar/notification";
+import SettingsCom from "./components/sidebar/settings/office/table";
+import CeoCom from "./components/sidebar/settings/ceo/table";
+import ArchiveCom from "./components/sidebar/settings/archive/table";
 // import Request from './components/requestDemo/navreq';
 // import ReqPage from './components/homePage';
 
@@ -61,6 +64,9 @@ function Router() {
           <Route path="/student/:id" element={<StudentDetail />} />
           <Route path="/budget" element={<BudjetComponent />} />
           <Route path="/notification" element={<NotificationCom />} />
+          <Route path="/office" element={<SettingsCom />} />
+          <Route path="/ceo" element={<CeoCom />} />
+          <Route path="/archive" element={<ArchiveCom />} />
         </Routes>
       </div>
     </div>

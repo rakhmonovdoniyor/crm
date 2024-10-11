@@ -31,13 +31,13 @@ const SignLogin = () => {
         email,
         password,
       });
-      if (response.status === 200) {
-        navigate("/profile");
-        console.log("succes");
-      } else {
-        console.log(" no succes");
-      }
-      console.log(response);
+      // if (response.status === 200) {
+      //   navigate("/profile");
+      //   console.log("succes");
+      // } else {
+      //   console.log(" no succes");
+      // }
+      // console.log(response);
       navigate("/profile");
 
       console.log("Login successful", response.data);

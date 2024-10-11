@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Allp, LogoLang } from "../loginPage/style";
 import {
+  AccordionContent,
+  AccordionHeader,
+  AccordionWrapper,
+  AccorIcon,
   AnderSmith,
   FlexEnd,
   Pii,
@@ -22,10 +26,26 @@ import avatar from "../../assets/sidebar/Avatar.png";
 // import { Line } from '../requestDemo/reqstyle'
 import { Link, useLocation } from "react-router-dom";
 // import ProfilePage from './rightbar/profile'
-
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 function Mysidebar() {
   const methodLocation = useLocation();
   const currentLocation = methodLocation.pathname;
+
+  // State for accordion
+  const [isOpen, setIsOpen] = useState(false);
+
+  // State for fetched data
+  const [data, setData] = useState([]);
+
+  // Toggle accordion open/closed
+  const toggleAccordion = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  // Close accordion
+  const closeAccordion = () => {
+    setIsOpen(false);
+  };
 
   return (
     <SidebarLeft>
@@ -79,8 +99,54 @@ function Mysidebar() {
             </Termiz>
           </Link>
           <Termiz>
-            <img src={img8} alt="termiz" />
-            <Pii>Settings</Pii>
+            {/* <img src={img8} alt="termiz" />
+            <Pii>Settings</Pii> */}
+
+            <AccordionWrapper>
+              <AccordionHeader
+                onClick={toggleAccordion}
+                setColor={
+                  currentLocation === "/office" ||
+                  currentLocation === "/CEO" ||
+                  currentLocation === "/archive"
+                }
+              >
+                <div>
+                  <img src={img8} alt="settingisico" />
+                  Settings
+                </div>
+                <AccorIcon rotateIcon={isOpen}>
+                  <KeyboardArrowDownIcon />
+                </AccorIcon>
+              </AccordionHeader>
+              <Link to="/office" style={{ textDecoration: "none" }}>
+                <AccordionContent
+                  isOpen={isOpen}
+                  setColor2={currentLocation === "/office"}
+                  onClick={closeAccordion}
+                >
+                  <div>Office</div>
+                </AccordionContent>
+              </Link>
+              <Link to="/CEO" style={{ textDecoration: "none" }}>
+                <AccordionContent
+                  isOpen={isOpen}
+                  setColor2={currentLocation === "/CEO"}
+                  onClick={closeAccordion}
+                >
+                  <div>CEO</div>
+                </AccordionContent>
+              </Link>
+              <Link to="/archive" style={{ textDecoration: "none" }}>
+                <AccordionContent
+                  isOpen={isOpen}
+                  setColor2={currentLocation === "/archive"}
+                  onClick={closeAccordion}
+                >
+                  <div>Archive</div>
+                </AccordionContent>
+              </Link>
+            </AccordionWrapper>
           </Termiz>
         </Wrapper>
 

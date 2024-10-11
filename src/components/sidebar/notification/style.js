@@ -2,8 +2,15 @@ import styled from "styled-components";
 
 export const NotifCon = styled.div`
 display: flex;
+ 
 margin-left: 250px;
 padding: 100px 50px;
+flex-direction: column;
+`
+
+export const FlexWrap = styled.div`
+display: flex;
+gap:100px;
 `
 export const Flex1 = styled.div`
 display: flex;
@@ -52,6 +59,7 @@ export const ButtonDiv = styled.div`
 display: flex;
  padding-bottom: 50px;
 justify-content: flex-end;
+/* align-items: flex-end; */
 `
 export const Con1 = styled.div`
 display: flex;
