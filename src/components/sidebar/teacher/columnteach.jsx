@@ -83,7 +83,7 @@ export default function TeachColumn() {
 
 
       <tbody >
-        {data.map((value,key, index) => (
+        {data.map((value, index ,key  ) => (
           <Link to={`${value.id}`}  style={{display: "contents"}}>
           <tr   key= {key}>
             
@@ -98,7 +98,7 @@ export default function TeachColumn() {
              fontWeight: '700',
              lineHeight: '16px' /* 116.667% */
                 }} >
-                  {index ++}
+                  {index + 1}
                   <img src={profil} alt="" />
                   {value.car.name}</td>
                  

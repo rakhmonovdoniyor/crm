@@ -120,7 +120,7 @@ export default function Staff() {
 
           <tbody>
             {data.map((value, index, key) => (
-              <Link to={`${value.id}`} style={{ display: "contents" }}>
+              
                 <tr key={key}>
                   <td
                     style={{
@@ -203,17 +203,17 @@ export default function Staff() {
                     <ButtonSet>1.200.000</ButtonSet>
                   </td>
                   <td
-                    style={{
-                      display: "flex",
-                      gap: "10px",
-                      color: " #6053B9",
-                      fontFamily: "Public Sans",
-                      paddingLeft: "20px",
-                      fontSize: "14px",
-                      fontStyle: "normal",
-                      fontWeight: "700",
-                      lineHeight: "16px",
-                    }}
+                    // style={{
+                    //   display: "flex",
+                    //   gap: "10px",
+                    //   color: " #6053B9",
+                    //   fontFamily: "Public Sans",
+                    //   paddingLeft: "20px",
+                    //   fontSize: "14px",
+                    //   fontStyle: "normal",
+                    //   fontWeight: "700",
+                    //   lineHeight: "16px",
+                    // }}
                   >
                     <WrapBtn>
                       <ButtonEditResume>
@@ -225,7 +225,7 @@ export default function Staff() {
                     </WrapBtn>
                   </td>
                 </tr>
-              </Link>
+ 
             ))}
           </tbody>
         </Table>

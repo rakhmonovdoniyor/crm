@@ -15,21 +15,24 @@ import {
 } from "../profile/modalst";
 import { Addlead } from "../leads/style";
 import { Checkbox } from "@mui/joy";
-import { CheckboxAddTeach, Scroll, Wrapp } from "../teacher/style";
+// import { CheckboxAddTeach, Scroll, Wrapp } from "../teacher/style";
 // import Example from "../../requestDemo/numberInput";
 import App from "../../loginPage/hiddenpassword";
-import { CreateNewM } from "./styles";
+// import { CreateNewM } from "./styles";
+import { Scroll } from "../teacher/style";
+import { Content } from "./style";
+// import { SendButton } from "../profile/modalst";
 // import Example from '../../requestDemo/numberInput';
 // import { Link } from 'react-router-dom';
 // import App from '../../loginPage/hiddenpassword';
 // import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 
-export default function CategoryModal() {
+export default function AddNewBlog() {
   const [open, setOpen] = React.useState(false);
   return (
     <React.Fragment>
       <Addlead onClick={() => setOpen(true)}>
-        <p>+ Add new category</p>
+        <p>+ Add new blog</p>
       </Addlead>
 
       <Modal
@@ -70,32 +73,25 @@ export default function CategoryModal() {
                 lineHeight: "32px" /* 133.333% */,
               }}
             >
-              Create new category
+              Create new blog
             </Typography>
             <Typography id="modal-desc" textColor="text.tertiary">
               <Container2>
                 <InputPWrapp>
-                  <p>Category name</p>
-                  <InputName placeholder="Lead name" type="text" />
+                  <p>Title  </p>
+                  <InputName placeholder="Write new title" type="text" />
+                </InputPWrapp>
+                <InputPWrapp>
+                  <p>Title  </p>
+                   <Content type="text" placeholder="Write new content" />
                 </InputPWrapp>
 
+
                 <div>
-                  <SendButton>Create lead</SendButton>
+                  <SendButton>Create blog</SendButton>
                 </div>
               </Container2>
-              {/* <Line>
-                   
-                </Line> */}
-
-              {/* <MiniWrap>
-                    <p $ptag >Are you already registered?</p>
-                    <Link to="/signlogin">
-                    <LogBtnWrap>
-                    <LogBtn>Login</LogBtn>
-                    </LogBtnWrap>
-                   
-                    </Link>
-                </MiniWrap> */}
+             
             </Typography>
           </Sheet>
         </Scroll>

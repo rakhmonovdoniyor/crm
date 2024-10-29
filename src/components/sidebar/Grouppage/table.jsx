@@ -58,8 +58,7 @@ export default function GroupCom() {
         <Table hoverRow>
           <thead>
             <tr>
-              <th style={{ width: "0.5%" }}></th>
-              <th
+               <th
                 style={{
                   width: "30%",
                   padding: "20px",
@@ -157,7 +156,7 @@ export default function GroupCom() {
             {data.map((value, index, key) => (
               <Link to={`${value.id}`} style={{ display: "contents" }}>
                 <tr key={key}>
-                  <td> {index + 1}</td>
+                   
                   <td
                     style={{
                       display: "flex",
@@ -171,7 +170,7 @@ export default function GroupCom() {
                       fontWeight: "700",
                       lineHeight: "16px" /* 116.667% */,
                     }}
-                  >
+                  >{index + 1}
                     <img src={profil} alt="" />
                     {value.car.name}
                   </td>

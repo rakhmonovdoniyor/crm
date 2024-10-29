@@ -14,6 +14,7 @@ import {  Users } from "../../../data/data";
 // import TeacherSalary from "./teacherSalary";
 import Income from "./salaryinfo/income"
 import Expense from "./salaryinfo/expense"
+import Expense2 from "./salaryinfo/mui";
 
 const TeacherPagesController = () => {
   //data by id
@@ -28,7 +29,7 @@ const TeacherPagesController = () => {
   function PageState(){
     const pages ={
       page1: <Income resultData={resultData}/>,
-      page2: <Expense/>,
+      page3: <Expense2/>,
      
     }
     return pages[currentPage]
@@ -42,7 +43,7 @@ const TeacherPagesController = () => {
         <TeacherInfoPages borderType="left" onClick={()=> setCurrentPage("page1")} colorActive={ currentPage === "page1"}>
           Income
         </TeacherInfoPages>
-        <TeacherInfoPages $BorderNoSides onClick={()=> setCurrentPage("page2")} colorActive={ currentPage === "page2"}>
+        <TeacherInfoPages borderType="right" onClick={()=> setCurrentPage("page3")} colorActive={ currentPage === "page3"}>
           Expense
         </TeacherInfoPages>
         

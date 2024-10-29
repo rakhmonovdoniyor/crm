@@ -12,6 +12,8 @@ import {
 import Branch from "./branch";
 import Staff from "./staff";
 import AddleadModal from "../../leads/addleadmod";
+import NewBranch from "./modals/branchmodal";
+import NewStaff from "./modals/staffmodal";
 
 const CeoCom = () => {
   const [currentPage, setCurrentPage] = useState("page1");
@@ -26,10 +28,10 @@ const CeoCom = () => {
   }
   function ModalState() {
     const pages = {
-      page1: <AddleadModal />,
+      page1: <NewStaff />,
       //   page2: "ss",
       //   page3: "Button",
-      page4: <AddleadModal /> ,
+      page4: <NewBranch /> ,
     };
     return pages[currentPage];
   }  
@@ -51,20 +53,7 @@ const CeoCom = () => {
           >
             Staff
           </TeacherInfoPages>
-          {/* <TeacherInfoPages
-            $BorderNoSides
-            onClick={() => setCurrentPage("page2")}
-            colorActive={currentPage === "page2"}
-          >
-            Category
-          </TeacherInfoPages>
-          <TeacherInfoPages
-            // $BorderNoSides
-            onClick={() => setCurrentPage("page3")}
-            colorActive={currentPage === "page3"}
-          >
-            Category
-          </TeacherInfoPages> */}
+      
           <TeacherInfoPages
             borderType="right"
             onClick={() => setCurrentPage("page4")}

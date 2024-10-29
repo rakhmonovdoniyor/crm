@@ -19,7 +19,7 @@ gap: 50px;
 `
 export const SetFlex1= styled.div`
 display: flex;
- 
+ padding: 5px;
  
 flex: 2;
 `

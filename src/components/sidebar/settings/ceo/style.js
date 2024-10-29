@@ -33,3 +33,24 @@ gap: 10px;
     color: white;
 }
 `
+
+export const RadioFlex = styled.div`
+display: flex;
+align-items: start;
+
+gap: 20px;
+`
+
+export const RadioFlex1 = styled.div`
+display: flex;
+align-items: center;
+gap: 30px;
+margin-bottom: 50px;
+`
+
+export const StafRadio = styled.input`
+width: 16px;
+height: 16px;
+border-radius: 4px;
+border: 1px solid var(--400, #A098D5);
+`

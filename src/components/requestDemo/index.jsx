@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 import {
   AS,
   Btnwrap,
@@ -18,50 +17,42 @@ import {
   PhoneEmail,
   Reqdemo,
   SendButton,
+  SendButton1,
   SendRequest,
 } from "./reqstyle";
-import { LogButton } from "../../styles/homeStyle/style";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
 import phone1 from "../../assets/req/Frame (1).png";
-import email from "../../assets/req/Frame (2).png";
-import Navbar from "../homePage";
 
-import Example from "./numberInput";
 
 function Request2() {
-  // `value` will be the parsed phone number in E.164 format.
-  // Example: "+12133734253".
   const [phone, setValue] = useState();
   const [name, setName] = useState("");
   const [country, setCountry] = useState("");
   const [surname, setSurname] = useState("");
-  const [number, setNumber] = useState();
+  const [number, setNumber] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    // console.log("error");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5053/crm/sign-up", {
-        name,
-        surname,
-        country,
-        email,
-        password,
-        number,
+      const response = await fetch("http://localhost:5050/auth/sign-up", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password, name, surname, country, number }),
       });
-      console.log(response);
-      //   navigate("/sidebar");
-
-      console.log("Login successful", response.data);
-      // Handle successful login
+      const data = await response.json();
+      if (response.ok) {
+        localStorage.setItem("token", data.token);
+        navigate("/signlogin");
+      }
     } catch (error) {
-      //   alert("Password or email wrong!");
-      setError("Invalid username or password");
+      alert("Password or email wrong!");
+      console.log("Password or email wrong");
     }
   };
 
@@ -70,7 +61,7 @@ function Request2() {
       <Container2>
         <Container4>
           <form onSubmit={handleSubmit}>
-            <h1>Fill out an aplication</h1>
+            <h1>Fill out an application</h1>
             <InputPWrapp>
               <p>Name</p>
               <InputName
@@ -90,16 +81,16 @@ function Request2() {
               />
             </InputPWrapp>
             <InputPWrapp>
-              <p>country</p>
+              <p>Country</p>
               <InputName
                 type="text"
-                placeholder="country"
+                placeholder="Country"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
               />
             </InputPWrapp>
             <InputPWrapp>
-              <p>Number</p>
+              <p>Phone Number</p>
               <InputName
                 type="number"
                 placeholder="number"
@@ -110,7 +101,7 @@ function Request2() {
             <InputPWrapp>
               <p>Email</p>
               <InputName
-                type="text"
+                type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -119,19 +110,18 @@ function Request2() {
             <InputPWrapp>
               <p>Password</p>
               <InputName
-                type="number"
-                placeholder="password"
+                type="password"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </InputPWrapp>
-
-            <button type="submit">Send</button>
-
-            <Line>{/* <h1></h1> */}</Line>
-
-            <MiniWrap>
-              <p $ptag>Are you already registered?</p>
+            <LogBtnWrap style={{ padding: "10px 10px 10px 0px" }}>
+              <SendButton1  type="submit">SEND</SendButton1>
+            </LogBtnWrap>
+            <Line />
+            <MiniWrap style={{ paddingTop: 10 }}>
+              <p>Are you already registered?</p>
               <Link to="/signlogin">
                 <LogBtnWrap>
                   <LogBtn>Login</LogBtn>
@@ -141,19 +131,16 @@ function Request2() {
           </form>
         </Container4>
       </Container2>
-
       <Container3>
         <Reqdemo>
           <h1>Request demo</h1>
           <p>
-            If you wand to know ore about Options opportunities. fill out <br />{" "}
-            the application and enjoy 14 days for free
+            If you want to know more about Options opportunities, fill out the application and enjoy 14 days for free.
           </p>
-          <Line></Line>
+          <Line />
         </Reqdemo>
         <AS>
           <h3>Contact us if you have any questions</h3>
-
           <PhoneEmail>
             <img src={phone1} alt="" />
             <p>(99) 999-99-99</p>
@@ -170,4 +157,5 @@ function Request2() {
     </Container>
   );
 }
+
 export default Request2;

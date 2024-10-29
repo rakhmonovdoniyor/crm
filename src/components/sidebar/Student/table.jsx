@@ -24,7 +24,10 @@ import reset from "../../../assets/leads/reset.png";
 import AddleadModal from "../leads/addleadmod";
 import CreateGroup from "../Grouppage/addgroup";
 import AddStudent from "./addStudent";
-// import CreateGroup from './addgroup';
+import StudentMenuButton from "./menubuttons";
+ 
+ 
+ 
 
 export default function StudentCom() {
   const data = Users.maindata.slice(0, 6);
@@ -69,8 +72,7 @@ export default function StudentCom() {
         <Table hoverRow>
           <thead>
             <tr>
-              <th style={{ width: "0.5%" }}></th>
-              <th
+               <th
                 style={{
                   width: "30%",
                   padding: "20px",
@@ -154,7 +156,7 @@ export default function StudentCom() {
                   fontSize: "12px",
                   fontStyle: "normal",
                   fontWeight: "600",
-                  lineHeight: "14px" /* 116.667% */,
+                  lineHeight: "14px" 
                 }}
               ></th>
 
@@ -164,10 +166,10 @@ export default function StudentCom() {
 
           <tbody>
             {data.map((value, index, key) => (
-              <Link to={`${value.id}`} style={{ display: "contents" }}>
+               
                 <tr key={key}>
-                  <td> {index + 1}</td>
-                  <td
+                  <Link to={`${value.id}`} style={{ display: "contents" }}>
+                   <td
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -180,7 +182,8 @@ export default function StudentCom() {
                       fontWeight: "700",
                       lineHeight: "16px" /* 116.667% */,
                     }}
-                  >
+                  >                  <td> {index + 1}</td>
+
                     <img src={profil} alt="" />
                     {value.car.name}
                   </td>
@@ -237,6 +240,7 @@ export default function StudentCom() {
                   >
                     Shamsiddin 2
                   </td>
+                  </Link>
                   <td
                     style={{
                       color: " #6053B9",
@@ -245,21 +249,16 @@ export default function StudentCom() {
                       fontSize: "14px",
                       fontStyle: "normal",
                       fontWeight: "700",
-                      lineHeight: "16px" /* 116.667% */,
+                      lineHeight: "16px"  
+                      ,border: 'none'
                     }}
                   >
-                    <button
-                      style={{
-                        backgroundColor: "transparent",
-                        border: "none",
-                      }}
-                    >
-                      {" "}
-                      <CustomizedMenus />
-                    </button>
+                    
+                     <StudentMenuButton/>
                   </td>
+                  
                 </tr>
-              </Link>
+              
             ))}
           </tbody>
         </Table>

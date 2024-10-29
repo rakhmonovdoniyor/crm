@@ -132,7 +132,7 @@ export default function Branch() {
 
           <tbody>
             {data.map((value, index, key) => (
-              <Link to={`${value.id}`} style={{ display: "contents" }}>
+             
                 <tr key={key}>
                   <td
                     style={{
@@ -236,7 +236,7 @@ export default function Branch() {
                     </button>
                   </td>
                 </tr>
-              </Link>
+             
             ))}
           </tbody>
         </Table>

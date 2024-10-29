@@ -19,7 +19,7 @@ const ExpenseTable = () => {
           <Totaldivh2>70.000 UZS</Totaldivh2>
         </TotalButton>
 
-        <CreateExpense />
+        {/* <CreateExpense /> */}
       </TotalWrapdiv>
       <IncomeTable />
     </div>

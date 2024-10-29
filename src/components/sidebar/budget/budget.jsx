@@ -5,6 +5,8 @@ import Income from "./income";
 import Category from "./category";
 import CategoryModal from "./modalcategory";
 import Expense from "./expense";
+import CreateExpense from "./createecpensemodal";
+import DateInputCom from "./tabledetail/date";
 
 const BudjetComponent = () => {
   const [currentPage, setCurrentPage] = useState("page1");
@@ -19,9 +21,9 @@ const BudjetComponent = () => {
   }
   function ModalState() {
     const pages = {
-      page1: "Button",
-      page2: <CategoryModal />,
-      page3: "Button",
+      page1: <DateInputCom/>,
+      page2: <div> <CategoryModal /></div>,
+      page3:  <CreateExpense/>,
     };
     return pages[currentPage];
   }

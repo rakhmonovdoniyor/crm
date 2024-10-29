@@ -62,8 +62,9 @@ width: 483px;
 flex-direction: column;
 justify-content: center;
 align-items: flex-start;
-gap: 8px;
+gap: 10px;
 p{
+    padding-top: 5px;
     color: var(--500, #6053B9);
     align-self: stretch;
 /* Bold/14px -> 16px */
@@ -155,6 +156,31 @@ border-radius: 6px;
 border: 1px solid var(--600, #2C2669);
 color: var(--600, #2C2669);
 cursor: pointer;
+background-color: white;
+/* Regular/18px -> 24px */
+font-family: "Public Sans";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px; /* 133.333% */
+
+`
+export const SendButton1 = styled.button`
+display: flex;
+width: 136px;
+height: 44px;
+padding: 10px 0px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+border-radius: 6px;
+border: 1px solid var(--600, #2C2669);
+color: var(--600, #2C2669);
+cursor: pointer;
+background-color: white;
+
 /* Regular/18px -> 24px */
 font-family: "Public Sans";
 font-size: 18px;

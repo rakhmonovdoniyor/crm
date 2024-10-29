@@ -77,7 +77,7 @@ export default function CustomizedMenus() {
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
-        style={{backgroundColor: 'transparent', border: 'none', cursor:'pointer', color: 'GrayText'}}
+        style={{backgroundColor: 'transparent', border: 'none', borderRadius: '5px', cursor:'pointer', color: 'GrayText'}}
       >
         <MoreVertIcon/>
       </button>

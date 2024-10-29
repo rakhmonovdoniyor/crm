@@ -124,3 +124,18 @@ font-weight: 500;
 /* line-height: 14px; 116.667% */
  }
 `
+
+export const Content = styled.input`
+display: flex;
+align-items: start;
+/* justify-content: start; */
+text-align: start;
+ width: 480px;
+ 
+height: 266px;
+border-radius: 8px;
+border: 1px solid var(--200, #CFCBEA);
+background: var(--100, #EFEEF8);
+ 
+ 
+`

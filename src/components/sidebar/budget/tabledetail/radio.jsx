@@ -5,9 +5,9 @@ const PaymentMethodSelector = () => {
   return (
     <form className="payment-form">
       <div style={{ display: "flex", flexDirection: "column" }}>
-        <label className="payment-label" htmlFor="naqd">
-          Naqd pul
-          <input type="radio" id="naqd" name="payment" value="naqd" />
+      <label className="payment-label" htmlFor="plastik">
+          Naqd Pul
+          <input type="radio" id="plastik" name="payment" value="plastik" />
         </label>
 
         <label className="payment-label" htmlFor="plastik">

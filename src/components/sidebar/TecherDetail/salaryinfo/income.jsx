@@ -93,7 +93,7 @@ export default function Income() {
              fontWeight: '700',
              lineHeight: '16px' /* 116.667% */
                 }} >
-                  {index ++}
+                   
                   {/* <img src={profil} alt="" /> */}
                   {value.car.name}</td>
                  

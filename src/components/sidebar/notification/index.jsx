@@ -13,12 +13,13 @@ import {
   Wiev,
 } from "./style";
 import { Addlead } from "../leads/style";
+import AddNewBlog from "./add-blog";
 
 const NotificationCom = () => {
   return (
     <NotifCon>
       <ButtonDiv>
-        <Addlead style={{ color: "white" }}>Add new blog</Addlead>
+        <AddNewBlog/>
       </ButtonDiv>
       <FlexWrap>
         <Flex1>

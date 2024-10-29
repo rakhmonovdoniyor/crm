@@ -123,7 +123,7 @@ export default function Grouptable() {
 
           <tbody>
             {data.map((value, index, key) => (
-              <Link to={`${value.id}`} style={{ display: "contents" }}>
+             
                 <tr key={key}>
                   <td> {index + 1}</td>
                   <td
@@ -208,7 +208,7 @@ export default function Grouptable() {
                     }}
                   ></td> */}
                 </tr>
-              </Link>
+         
             ))}
           </tbody>
         </Table>

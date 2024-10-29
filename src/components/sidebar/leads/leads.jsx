@@ -10,6 +10,9 @@ import LeadGrid from './leadgridcolumn/leadgrid'
 import LeadColumn from './leadcolumn/leadcolumn'
 
 const LeadsComponent = () => {
+  const handleReset = () => {
+    window.location.reload();
+  };
 
 
   const [active, setActive] = useState(true);
@@ -54,7 +57,7 @@ const svgGrid = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
           <SearchIcon src={strelka} alt="icon" />
         </InputContainer>
       
-        <ResetButton $maxWidth>
+        <ResetButton $maxWidth onClick={handleReset}>
           <img src={reset} alt="icon" />
           Reset filter
         </ResetButton>

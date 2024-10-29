@@ -60,7 +60,7 @@ export default function LeadColumn() {
         </tr>
       </thead>
       <tbody >
-        {data.map((value,key, index) => (
+        {data.map((value , index,key ) => (
           <tr   key= {key}>
             
             <td style={{display: 'flex',
@@ -73,7 +73,7 @@ export default function LeadColumn() {
              fontWeight: '700',
              lineHeight: '16px' /* 116.667% */
                 }} >
-                  {index ++}
+                  {index + 1}
                   <img src={profil} alt="" />
                   {value.car.name}</td>
 

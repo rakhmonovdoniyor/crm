@@ -29,7 +29,7 @@ export default function CreateExpense() {
   return (
     <React.Fragment>
       <Addlead onClick={() => setOpen(true)}>
-        <p>+ CreateExpense</p>
+        <p>+ Create Expense</p>
       </Addlead>
 
       <Modal

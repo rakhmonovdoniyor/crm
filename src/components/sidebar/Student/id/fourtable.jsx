@@ -45,7 +45,7 @@ const StudentFourTabs = () => {
             Groups
           </TeacherInfoPages>
           <TeacherInfoPages
-            $BorderNoSides
+          $BorderRightSide 
             onClick={() => setCurrentPage("page2")}
             colorActive={currentPage === "page2"}
           >

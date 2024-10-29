@@ -9,6 +9,9 @@ import {
   TeacherInfoPages,
   TeachersProfileTopPages,
 } from "../../TecherDetail/style";
+import NewRoom from "./modals/roomModal";
+import SMSTemplate from "./modals/smstemplatesModal";
+import NewCourse from "./modals/coursemodal";
 
 const CeoCom = () => {
   const [currentPage, setCurrentPage] = useState("page1");
@@ -24,10 +27,10 @@ const CeoCom = () => {
   }
   function ModalState() {
     const pages = {
-      page1: "Button",
-      page2: "ss",
-      page3: "Button",
-      page4: "Button",
+      page1:  <NewCourse/>,
+      page2: <NewRoom/>,
+      page3: <SMSTemplate/>,
+      page4: "",
     };
     return pages[currentPage];
   }
@@ -47,28 +50,28 @@ const CeoCom = () => {
             onClick={() => setCurrentPage("page1")}
             colorActive={currentPage === "page1"}
           >
-            Staff
+            Courses
           </TeacherInfoPages>
           <TeacherInfoPages
-            $BorderNoSides
+            $BorderRightSide
             onClick={() => setCurrentPage("page2")}
             colorActive={currentPage === "page2"}
           >
-            Category
+            Rooms
           </TeacherInfoPages>
           <TeacherInfoPages
-            // $BorderNoSides
+           $BorderNoSides
             onClick={() => setCurrentPage("page3")}
             colorActive={currentPage === "page3"}
           >
-            Category
+            SMS Templates
           </TeacherInfoPages>
           <TeacherInfoPages
             borderType="right"
             onClick={() => setCurrentPage("page4")}
             colorActive={currentPage === "page4"}
           >
-            Branches
+            SMS Logs
           </TeacherInfoPages>
         </TeachersProfileTopPages>
         {ModalState()}

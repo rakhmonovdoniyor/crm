@@ -1,38 +1,39 @@
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
-import { useState } from 'react';
-import { Padding } from '@mui/icons-material';
-import { ModalInputContainer, ModalLabel } from './reqstyle';
+import * as React from 'react';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import { styled } from '@mui/system';
 
- export function Example() {
-  // `value` will be the parsed phone number in E.164 format.
-  // Example: "+12133734253".
-  const [phone, setPhone,setValue] = useState()
+const InputPWrapp = styled('div')({
+  marginBottom: '20px',
+});
+
+const Label = styled('p')({
+  marginBottom: '5px',
+  fontSize: '14px',
+  color: '#333',
+});
+
+const StyledPhoneInput = styled(PhoneInput)({
+  width: '100%',
+  padding: '10px',
+  borderRadius: '8px',
+  border: 'none', // Borderni olib tashlash
+  fontSize: '16px',
+  '&:focus': {
+    borderColor: '#6053B9',
+    outline: 'none',
+  },
+});
+
+export default function PhoneNumberInput({ value, onChange }) {
   return (
-        <>
-        
-        <PhoneInput className='pohneinput'
-      placeholder="Enter phone number"
-      value={phone}
-      defaultCountry='UZ'
-    //   onChange={setValue}
-      onChange={(phone) => setValue(phone)}
-      inputStyle={{ width: '250px' , height: '20px' }}
-      buttonStyle={{
-        
-          height: "58px",
-          borderRadius: "8px 0 0 8px",
-          background: "#EFEEF8",
-      }}
+    <InputPWrapp>
+      <Label>Number</Label>
+      <StyledPhoneInput
+        placeholder="Enter phone number"
+        value={value}
+        onChange={onChange}
       />
-        </>
-
-
-
-
-   
-      
-  )
+    </InputPWrapp>
+  );
 }
-
-export default Example;
